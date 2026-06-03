@@ -1,1 +1,1 @@
-Sadly I did not document my leetcode before, I do now. I will try to provide code with different solutions and in an understanding way, i want to do it as easy as possible. I will probably also improve over time with doing it in this style, so expect better explanations in future for the coding problems.
+I do solve here Leetcode problems, I do it first by myself and then I look for optimization, also with AI help. The goal is to learn and sometimes I find more than the AI explains.
