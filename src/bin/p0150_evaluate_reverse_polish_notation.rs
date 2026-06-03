@@ -225,6 +225,10 @@ fn main() {
 
     // --- BENCHMARKING
     // println!("--------------------------------------------------");
+
+    // --- BENCHMARKING ---
+    println!("--------------------------------------------------");
+
     println!("Running Benchmarks (1,000,000 iterations)...");
 
     let iterations = 1_000_000;
