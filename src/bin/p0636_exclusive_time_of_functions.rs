@@ -78,8 +78,20 @@ impl Solution {
         let mut stack: Vec<(usize, i32)> = Vec::new();
 
         for log in logs {
-            // NASA Optimization: Zero-allocation string parsing using an Iterator
-            // This avoids creating a new Vec<&str> on the heap for every log.
+            // =========================================================================
+            // NASA Optimization: Zero-Allocation String Parsing (Iterators vs Vectors)
+            // =========================================================================
+            // Beginner Rust: `.split(':').collect::<Vec<&str>>()`
+            //   - Pauses the program to ask the OS for physical RAM (Heap Allocation).
+            //   - Builds an entire Vector structure just to hold 3 items, then deletes it.
+            //   - Very slow (costs ~100-200 nanoseconds per log).
+            //
+            // Advanced Rust: `log.split(':')` + `.next()`
+            //   - Bypasses the OS entirely. No Heap Memory is allocated.
+            //   - Returns a lightweight `Split` struct (an Iterator) on the CPU Stack.
+            //   - The Iterator acts as a "bookmark", just pointing to the existing text.
+            //   - Moving the bookmark with `.next()` takes ~1 nanosecond.
+            // =========================================================================
             let mut parts = log.split(':');
             let function_id: usize = parts.next().unwrap().parse().unwrap();
             let action = parts.next().unwrap();
