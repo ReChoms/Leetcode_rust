@@ -24,3 +24,7 @@ path = "src/bin/array/p0448_find_all_numbers_disappeared_in_an_array.rs"
 [[bin]]
 name = "p1475_final_prices_with_a_special_discount_in_a_shop"
 path = "src/bin/stack/p1475_final_prices_with_a_special_discount_in_a_shop.rs"
+
+[[bin]]
+name = "p0739_daily_temperatures"
+path = "src/bin/stack/p0739_daily_temperatures.rs"
