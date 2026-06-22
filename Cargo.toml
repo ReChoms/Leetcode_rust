@@ -36,3 +36,7 @@ path = "src/bin/stack/p0084_largest_rectangle_in_histogram.rs"
 [[bin]]
 name = "p0503_next_greater_element_ii"
 path = "src/bin/stack/p0503_next_greater_element_ii.rs"
+
+[[bin]]
+name = "dynamic_array"
+path = "src/bin/design/dynamic_array.rs"
