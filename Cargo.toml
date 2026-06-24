@@ -40,3 +40,8 @@ path = "src/bin/stack/p0503_next_greater_element_ii.rs"
 [[bin]]
 name = "dynamic_array"
 path = "src/bin/design/dynamic_array.rs"
+
+[[bin]]
+name = "singly_linked_list"
+path = "src/bin/design/singly_linked_list.rs"
+
