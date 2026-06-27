@@ -45,3 +45,6 @@ path = "src/bin/design/dynamic_array.rs"
 name = "singly_linked_list"
 path = "src/bin/design/singly_linked_list.rs"
 
+[[bin]]
+name = "dijkstra"
+path = "src/bin/graph/dijkstra.rs"
