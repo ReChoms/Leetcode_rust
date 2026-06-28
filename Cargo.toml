@@ -48,3 +48,7 @@ path = "src/bin/design/singly_linked_list.rs"
 [[bin]]
 name = "dijkstra"
 path = "src/bin/graph/dijkstra.rs"
+
+[[bin]]
+name = "p0217_contains_duplicate"
+path = "src/bin/array/p0217_contains_duplicate.rs"
