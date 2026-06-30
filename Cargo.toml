@@ -52,3 +52,11 @@ path = "src/bin/graph/dijkstra.rs"
 [[bin]]
 name = "p0217_contains_duplicate"
 path = "src/bin/array/p0217_contains_duplicate.rs"
+
+[[bin]]
+name = "p0242_valid_anagram"
+path = "src/bin/array/p0242_valid_anagram.rs"
+
+[[bin]]
+name = "p0001_two_sum"
+path = "src/bin/array/p0001_two_sum.rs"
