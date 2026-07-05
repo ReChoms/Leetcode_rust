@@ -60,3 +60,11 @@ path = "src/bin/array/p0242_valid_anagram.rs"
 [[bin]]
 name = "p0001_two_sum"
 path = "src/bin/array/p0001_two_sum.rs"
+
+[[bin]]
+name = "p0049_group_anagrams"
+path = "src/bin/array/p0049_group_anagrams.rs"
+
+[[bin]]
+name = "p0347_top_k_frequent_elements"
+path = "src/bin/heap/p0347_top_k_frequent_elements.rs"
