@@ -68,3 +68,7 @@ path = "src/bin/array/p0049_group_anagrams.rs"
 [[bin]]
 name = "p0347_top_k_frequent_elements"
 path = "src/bin/heap/p0347_top_k_frequent_elements.rs"
+
+[[bin]]
+name = "p0271_encode_and_decode_strings"
+path = "src/bin/array/p0271_encode_and_decode_strings.rs"
