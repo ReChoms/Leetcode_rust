@@ -78,6 +78,41 @@ impl Solution {
 
         ret
     }
+
+    pub fn decode_v2(s: String) -> Vec<String> {
+        let mut ret = Vec::new();
+        // Improvement: Since we know the constraints guarantee ASCII, we can safely and efficiently
+        // iterate over the raw bytes of the string instead of allocating an intermediate Vec<char>.
+        // Slicing bytes directly is much faster than pushing characters one-by-one.
+        let bytes = s.as_bytes();
+        let mut i = 0;
+
+        while i < bytes.len() {
+            let mut j = i;
+            
+            // 1. Advance j until we hit the delimiter '#' (ASCII byte b'#')
+            while bytes[j] != b'#' {
+                j += 1;
+            }
+
+            // 2. Extract the length number string from the bytes we passed over
+            let length_str = std::str::from_utf8(&bytes[i..j]).unwrap();
+            let length: usize = length_str.parse().unwrap();
+
+            // 3. The actual word starts exactly 1 index after the '#'
+            let start = j + 1;
+            let end = start + length;
+
+            // 4. Extract the word using the calculated slice indices
+            let word = std::str::from_utf8(&bytes[start..end]).unwrap().to_string();
+            ret.push(word);
+
+            // 5. Instantly jump our main pointer to the start of the next number
+            i = end;
+        }
+
+        ret
+    }
 }
 
 fn main() {
@@ -99,10 +134,47 @@ fn main() {
         let decoded = Solution::decode(encoded.clone());
         println!("Decoded:  {:?}", decoded);
 
-        if strs == decoded {
+        let decoded_v2 = Solution::decode_v2(encoded.clone());
+        println!("Decoded v2: {:?}", decoded_v2);
+
+        if strs == decoded && strs == decoded_v2 {
             println!("Result:   PASSED\n");
         } else {
             println!("Result:   FAILED\n");
         }
+    }
+
+    // --- Performance Benchmarking ---
+    println!("--- Benchmarking Performance (100,000 iterations) ---");
+    let bench_data = vec![
+        "SuperLongWord123".to_string(), 
+        "AnotherWord#$$".to_string(), 
+        "Short".to_string(), 
+        "".to_string()
+    ];
+    let encoded = Solution::encode(bench_data);
+    let iterations = 100_000;
+
+    let start_v1 = std::time::Instant::now();
+    for _ in 0..iterations {
+        let _ = Solution::decode(encoded.clone());
+    }
+    let duration_v1 = start_v1.elapsed();
+
+    let start_v2 = std::time::Instant::now();
+    for _ in 0..iterations {
+        let _ = Solution::decode_v2(encoded.clone());
+    }
+    let duration_v2 = start_v2.elapsed();
+
+    println!("v1 (For Loop State Machine): {:?}", duration_v1);
+    println!("v2 (While Loop Byte Slice):  {:?}", duration_v2);
+    
+    if duration_v2 < duration_v1 {
+        let multiplier = duration_v1.as_secs_f64() / duration_v2.as_secs_f64();
+        println!("v2 is {:.2}x faster!", multiplier);
+    } else {
+        let multiplier = duration_v2.as_secs_f64() / duration_v1.as_secs_f64();
+        println!("v1 is {:.2}x faster!", multiplier);
     }
 }
