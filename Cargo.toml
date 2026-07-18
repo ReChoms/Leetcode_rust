@@ -84,3 +84,7 @@ path = "src/bin/array/p0036_valid_sudoku.rs"
 [[bin]]
 name = "p0128_longest_consecutive_sequence"
 path = "src/bin/array/p0128_longest_consecutive_sequence.rs"
+
+[[bin]]
+name = "p0125_valid_palindrome"
+path = "src/bin/two_pointers/p0125_valid_palindrome.rs"
