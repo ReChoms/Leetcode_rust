@@ -88,3 +88,7 @@ path = "src/bin/array/p0128_longest_consecutive_sequence.rs"
 [[bin]]
 name = "p0125_valid_palindrome"
 path = "src/bin/two_pointers/p0125_valid_palindrome.rs"
+
+[[bin]]
+name = "p0167_two_sum_ii"
+path = "src/bin/two_pointers/p0167_two_sum_ii.rs"
