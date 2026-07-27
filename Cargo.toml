@@ -92,3 +92,7 @@ path = "src/bin/two_pointers/p0125_valid_palindrome.rs"
 [[bin]]
 name = "p0167_two_sum_ii"
 path = "src/bin/two_pointers/p0167_two_sum_ii.rs"
+
+[[bin]]
+name = "p0015_3sum"
+path = "src/bin/two_pointers/p0015_3sum.rs"
