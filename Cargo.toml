@@ -96,3 +96,7 @@ path = "src/bin/two_pointers/p0167_two_sum_ii.rs"
 [[bin]]
 name = "p0015_3sum"
 path = "src/bin/two_pointers/p0015_3sum.rs"
+
+[[bin]]
+name = "p0011_container_with_most_water"
+path = "src/bin/two_pointers/p0011_container_with_most_water.rs"
