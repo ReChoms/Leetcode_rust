@@ -54,14 +54,14 @@ impl Solution {
         let mut window_start = 0;
         let mut max_len = 0;
 
-        for (window_end, &ch) in chars.iter().enumerate() {
-            let prev_pos = last_seen[ch as usize];
+        for (window_end, &current_char) in chars.iter().enumerate() {
+            let prev_pos = last_seen[current_char as usize];
             // Enhancement 2: Jump `window_start` directly past duplicate's last occurrence (O(1) skip)
             if prev_pos > window_start {
                 window_start = prev_pos;
             }
 
-            last_seen[ch as usize] = window_end + 1;
+            last_seen[current_char as usize] = window_end + 1;
             max_len = max_len.max(window_end - window_start + 1);
         }
 
@@ -76,12 +76,12 @@ impl Solution {
             .enumerate()
             .fold(
                 ([0usize; 128], 0usize, 0usize),
-                |(mut last_seen, mut window_start, max_len), (window_end, &ch)| {
-                    let prev_pos = last_seen[ch as usize];
+                |(mut last_seen, mut window_start, max_len), (window_end, &current_char)| {
+                    let prev_pos = last_seen[current_char as usize];
                     if prev_pos > window_start {
                         window_start = prev_pos;
                     }
-                    last_seen[ch as usize] = window_end + 1;
+                    last_seen[current_char as usize] = window_end + 1;
                     (last_seen, window_start, max_len.max(window_end - window_start + 1))
                 },
             )
