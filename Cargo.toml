@@ -112,3 +112,11 @@ path = "src/bin/sliding_window/p0121_best_time_to_buy_and_sell_stock.rs"
 [[bin]]
 name = "p0003_longest_substring_without_repeating_characters"
 path = "src/bin/sliding_window/p0003_longest_substring_without_repeating_characters.rs"
+
+[[bin]]
+name = "p0424_longest_repeating_character_replacement"
+path = "src/bin/sliding_window/p0424_longest_repeating_character_replacement.rs"
+
+[[bin]]
+name = "p0567_permutation_in_string"
+path = "src/bin/sliding_window/p0567_permutation_in_string.rs"
