@@ -36,18 +36,15 @@ impl Solution {
         let s1_bytes = s1.as_bytes();
         let s2_bytes = s2.as_bytes();
 
-        // 1. Build the target counts and the initial window of size window_size
         for i in 0..window_size {
             target[(s1_bytes[i] - b'a') as usize] += 1;
             check[(s2_bytes[i] - b'a') as usize] += 1;
         }
 
-        // 2. Check if the very first window is already a match
         if target == check {
             return true;
         }
 
-        // 3. Start sliding from index `window_size` onwards
         for i in window_size..s2_bytes.len() {
             let incoming = (s2_bytes[i] - b'a') as usize;
             let outgoing = (s2_bytes[i - window_size] - b'a') as usize;
