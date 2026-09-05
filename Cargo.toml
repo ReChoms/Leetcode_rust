@@ -120,3 +120,7 @@ path = "src/bin/sliding_window/p0424_longest_repeating_character_replacement.rs"
 [[bin]]
 name = "p0567_permutation_in_string"
 path = "src/bin/sliding_window/p0567_permutation_in_string.rs"
+
+[[bin]]
+name = "p0076_minimum_window_substring"
+path = "src/bin/sliding_window/p0076_minimum_window_substring.rs"
